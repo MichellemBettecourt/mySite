@@ -1,6 +1,204 @@
-<html>
-<header><title>This is title</title></header>
-<body>
-Hello world
-</body>
+<!--
+ASSIGNMENT 2: Styling Your First Web Page With CSS
+File: http://weblab.cs.uml.edu/~mbettenc/
+Name: Michelle Bettencourt
+E-mail: michelle_bettencourt@student.uml.edu
+University affiliation: UMass Lowell student in GUI COMP.4610
+Date: October 06, 2019
+Description: This is first assignment of the course so it is pretty basic.
+Since this is the index.html I plan on adding onto it later in the "table of
+contents" part.
+
+I used a lot of what the professor has taught in class as well as my own
+research and alot of trial and error.
+
+It passes the test in: https://validator.nu/
+
+Copyright (c) 2019 by Michelle M. Bettencourt. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+
+Updated by MMB on September 12, 2019
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>M.Bettencourt GUI</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <!--
+	TEST I have the sections broken down into container, center element, titleContainter
+    nav, aboutMe and Resume
+    -->
+    <div class="container">
+      <!--
+      Because of the images I choose to include the min-width is pretty large of
+      the centerElement. It is 992px
+      -->
+      <div  class="centerElement">
+        <div class="titleContainer">
+          <!--
+          This div element relies heavily on the css properties
+          display: inline-block;
+          vertical-align: middle;
+          This makes it so that the elements are in a line hoizontally
+          Reference: https://www.w3schools.com/css/css_align.asp
+          -->
+          <div class="image_me">
+            <img  src="me_bw.jpg" alt="me">
+          </div>
+          <div class="image">
+            <img  src="books_bw.jpg" alt="me">
+          </div>
+          <div class="itemBracket"><h3>{</h3></div>
+          <div class="item">
+              <div class="title">
+                <h3>Michelle TEST</h3>
+                <h3>Bettencourt</h3>
+                <h3>GUI portfolio</h3>
+             </div>
+          </div>
+          <!--
+          I had to break down each image into smaller classes because they all
+          need some styling.
+          -->
+          <div class="itemBracket"><h3>}</h3></div>
+          <div class="image">
+            <img  src="music_bw.jpg" alt="me">
+          </div>
+          <div class="image_code">
+            <img  src="code_bw.jpg" alt="me">
+          </div>
+        </div>
+        <nav>
+            <ul>
+              <!--
+              Since alot of the course work has multiple elements I decided
+              include drop down menus for each assignment.
+              Within the drop down is what ever is necessary for that assignment
+
+              So when you hover over the text in droptown1 then the text in
+              dropdown-content1 opens and so on and so forth
+
+              If I choose to use javascript I would have been able to do This
+              more efficiently
+              -->
+              <li class="courseWork">Course Work</li>
+                <li class="dropdown1"><a href="index.html">Assignment 1</a>
+                  <div class="dropdown-content1">
+                  <p> Reading assignment</p>
+                  </div>
+                </li>
+                <li class="dropdown2"><a href="index.html">Assignment 2</a>
+                  <div class="dropdown-content2">
+                  <p> <a href="http://weblab.cs.uml.edu/~mbettenc/readme_older.txt">readme_older.txt</a></p>
+                  <p> <a href="http://weblab.cs.uml.edu/~mbettenc/index_older.html">index_older.html</a></p>
+                  </div>
+                </li>
+                <li class="dropdown3"><a href="index.html">Assignment 3</a>
+                  <div class="dropdown-content3">
+                  <p><a href="http://weblab.cs.uml.edu/~mbettenc/pacific.html">pacific.html</a></p>
+                  <p><a href="http://weblab.cs.uml.edu/~mbettenc/pacific_readme.txt">pacific_readme.txt</a></p>
+                  </div>
+                </li>
+                <li class="dropdown4"><a href="index.html">Inclass 2</a>
+                  <div class="dropdown-content4">
+                  <p><a href="http://weblab.cs.uml.edu/~mbettenc/example.html">example.html</a> </p>
+                  <p><a href="http://weblab.cs.uml.edu/~mbettenc/example_readme.txt">example_readme.txt</a></p>
+                  </div>
+                </li>
+                <li class="dropdown5"><a href="index.html">Assignment 4</a>
+                  <div class="dropdown-content5">
+                  <p><a href="http://weblab.cs.uml.edu/~mbettenc/index.html">index.html</a> </p>
+                  <p><a href="http://weblab.cs.uml.edu/~mbettenc/index_readme_new.txt">index_readme_new.txt</a></p>
+                  </div>
+                </li>
+            </ul>
+        </nav>
+        <!--
+        Small about Me section that remains right of the nav bar
+        -->
+          <div class="aboutMe">
+            <div>
+                <h3 class="title">About me</h3>
+                <p>Senior computer science student at UMass Lowell </p>
+                <p>interested in a career in web development</p>
+            </div>
+          </div>
+          <!--
+          This section is all pretty self explanitory
+          The labels of my previous jobs are links to their sites.
+          The lists are square bullet points
+          -->
+        <div class="resume">
+          <!--
+          First two lines are centered
+          The rest floats left
+          -->
+          <h3 class="resumeTitle">Resume</h3>
+          <p class="resumeP">978-935-8096 | 158 Berkeley Ave.  Lowell, MA 01852 |
+            <!-- This is something I learned from my internship at Clearsurance.com
+            When you click my email it automatically starts up your machines email app
+            -->
+						<a class="resumeEmail" href="mailto:michelle_bettencourt@student.uml.edu?subject=FromWebsite" target="_blank" rel="noopener">
+              michelle_bettencourt@student.uml.edu
+						</a>
+					</p>
+          <!--
+          With a combination of using classes and element tags I styled the
+          entire page
+          -->
+          <h3 class="resumeH3">EDUCATION</h3>
+          <p>University of Massachusetts Lowell | Dec. 2019</p>
+          <ul>
+            <li>Bachelor of Science in Computer Science</li>
+            <li>Minor in Physiology </li>
+            <li>Relevant Courses: Computing I-IV, Computer Architecture, Mobile App Development </li>
+          </ul>
+          <h3 class="resumeH3">RELATED EXPERIENCE </h3>
+          <p class="company"><a  class="link" href="https://Clearsurance.com"  target="_blank">Clearsurance</a> | May 2019-Present</p>
+          <p>Engineering Intern</p>
+          <ul>
+            <li>Work with the development team doing front-end and back-end programming on their Angular application</li>
+            <li>Completed over 50 code development tickets in HTML, CSS and JavaScript as well as reviewed many of peers’ work</li>
+            <li>Helped the team research the best method to incorporate a quality assurance step to their development process </li>
+          </ul>
+          <p class="company"><a  class="link" href="https://Mutualink.net"  target="_blank">Mutualink</a> | May 2018-Aug 2018</p>
+          <p>Engineering Intern</p>
+          <ul>
+            <li>Completed software test cases against many different platforms/hardware, such as window’s machines, ios devices, radios,  telephones and cameras</li>
+            <li>Wrote python scripts to change configuration files of multiple different platforms/hardware devices all at once</li>
+            <li>Wrote and helped solve software bugs in new and old projects</li>
+          </ul>
+          <p class="company"><a  class="link" href="https://www.draper.com/"  target="_blank">Draper Laboratory</a> | Jan. 2017-July 2017</p>
+          <p>Engineering Intern</p>
+          <ul>
+            <li>Read and wrote software documentation about testing newly developed software</li>
+            <li>Wrote 30+ python/simics scripts to test software requirements</li>
+            <li>Wrote a tool in python that compares different variables from different text files. The tool then populates the differences onto an excel sheet</li>
+            <li>Wrote and addressed engineering change orders</li>
+          </ul>
+          <h3 class="resumeH3">ACADEMIC PROJECTS</h3>
+          <p>Booze Hound | A Beer Rating Mobile App</p>
+          <ul>
+            <li>Worked with a group of my peers to create an app using Xamarin, C# and SQLite</li>
+            <li>The app had to interact with a database, contain multiple pages and we broke it down into components in order to keep the look consistent for the user experience </li>
+            <li>During this project I not only had to learn a new framework and language, but it also taught me how to work in a group and divide work evenly since I was the group leader </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--
+    Added because it is W3 verified
+    -->
+    <p>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+              src="http://jigsaw.w3.org/css-validator/images/vcss"
+              alt="Valid CSS!" />
+      </a>
+    </p>
+  </body>
 </html>

@@ -1,0 +1,325 @@
+/*
+css code for the index of http://weblab.cs.uml.edu/~mbettenc/
+
+as we haven't gone through css code it is still pretty simple.
+
+Copyright (c) 2019 by Michelle M. Bettencourt. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+updated by MMB on September 12, 2019
+*/
+
+html {
+  /*Source: https://css-tricks.com/perfect-full-page-background-image/*/
+  background: url("background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/*
+Similar to alot of our other assinments I float a block of contents in the middle
+It is 80% with even margins on both sides.
+*/
+
+.container {
+  width: 80%;
+  height: auto;
+  top: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/*
+All of the images are pretty much the same just some need a specified width,
+height and padding. All of which I handle hear.
+
+An important thing to notice is that sometimes I need to use negative margins
+because the images had their own "built-in" margins.
+*/
+
+.image {
+    display: inline-block;
+    vertical-align: middle;
+    height: 147px;
+}
+
+.image img {
+   height: 148px;
+   margin-right: -4px;
+}
+
+.image_me {
+    display: inline-block;
+    vertical-align: middle;
+    height: 147px;
+}
+
+.image_me img {
+    height: 148px;
+    margin-right: -4px;
+}
+
+
+.image_code {
+    display: inline-block;
+    vertical-align: middle;
+    height: 147px;
+}
+
+.image_code img {
+    width: 132px;
+    height: 148px;
+}
+
+/*
+The brackets are just regular text brakets blown up to a very large size with
+width
+*/
+.item {
+ width: 100px;
+ display: inline-block;
+ vertical-align: middle;
+ width: 215px;
+ font-size: small;
+}
+
+.itemBracket {
+ width: 45px;
+ display: inline-block;
+ vertical-align: middle;
+ font-size: 100px;
+ padding-bottom: 10px;
+}
+
+
+
+.title {
+    font-weight: bold;
+    font-size: 200%;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/*
+Because of all the images the min-width is still pretty large at 992px
+The height is also a static number because I will be adding things to This
+manually
+*/
+
+.centerElement {
+  background-color:#f8d8d8;
+  border-radius: 10px;
+  padding: 10px 0;
+  min-height: 200px;
+  height: 650px;
+  min-width: 992px;
+}
+
+
+h3 {
+  margin: 0;
+}
+/*
+The title is the only part that is 100%. Also note the borders.
+*/
+
+.titleContainer {
+ width: 100%;
+ border-top: solid 2px;
+ border-bottom: solid 2px;
+}
+
+/*
+The nav has a set width.
+*/
+nav {
+	font-weight: bold;
+  float: left;
+  width: 175px;
+}
+
+/*
+Here I had to remove alot of the default styling
+*/
+nav ul {
+	font-size: 1.2em;
+	list-style-image: none;
+	width: 100%;
+	float: none;
+	list-style: none;
+  color: black;
+  padding: 0;
+}
+
+/*
+removes the underline from the links in the nav
+*/
+
+nav ul a:-webkit-any-link {
+	text-decoration: none;
+}
+
+/*
+When you hover it's green otherwise black
+*/
+a {
+  color: black;
+}
+
+a:hover {
+  color: green;
+}
+
+/*
+The mose important part about this section is the overflow-hidden.
+https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+*/
+
+.resume {
+  height: 410px;
+  overflow-x: hidden;
+  text-align: left;
+  border-left: inset;
+  border-color: dimgrey;
+  padding: 10px 0 0 20px;
+}
+
+/*
+This styles the scrollbar using help from w3 schools
+https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+*/
+div::-webkit-scrollbar {
+  width: 1em;
+}
+
+div::-webkit-scrollbar-thumb {
+background-color: darkgrey;
+outline: 1px solid slategrey;
+border-radius: 10px
+}
+
+.resumeH3 {
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+.resumeEmail {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.resumeP {
+  text-align: center;
+}
+
+ul {
+   list-style-type: square;
+   margin-top: 0;
+}
+
+/* https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_navbar_dropdown */
+/* Basically the way is works is that the "dropdown conent" remains hidden until
+it is hovered over. In that case it appears to the user on top of everything
+because of the z index */
+.dropdown1, .dropdown2, .dropdown3, .dropdown4, .dropdown5 {
+  position: relative;
+  display: inline-block;
+    margin: 10px 0;
+}
+
+.dropdown-content1, .dropdown-content2, .dropdown-content3, .dropdown-content4, .dropdown-content5{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  font-size: medium;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+
+/*
+I had to repeat a bunch of stuff because each link has to open a specific
+dropdown-content
+ */
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+}
+
+.dropdown3:hover .dropdown-content3 {
+  display: block;
+}
+
+.dropdown4:hover .dropdown-content4 {
+  display: block;
+}
+
+.dropdown5:hover .dropdown-content5 {
+  display: block;
+}
+
+.courseWork {
+  padding: 10px 0;
+  border-bottom: double;
+}
+
+.aboutMe {
+  border-bottom: inset;
+  overflow-x: hidden;
+  text-align: center;
+  border-left: inset;
+  padding: 5px 0 10px 0;
+  border-color: dimgrey;
+}
+.resumeTitle {
+  font-weight: bold;
+  font-size: 189%;
+  padding-bottom: 5px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+/*
+The links to my former companies in the resume is both underlined
+and gets a little larger when it's hovered over
+*/
+.link {
+  text-decoration: underline;
+}
+
+.link:hover {
+  font-size: large;
+}
+/*
+This is redesigning some things when the size is ipad length or smaller
+-It removes some images in the title so that I can shorten the width
+-I also reduce the width length of the entire box
+-https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+ */
+
+@media only screen and (max-width: 1024px) {
+  .image img {
+    width: 216px;
+  }
+
+  .image_me img {
+      display: none;
+  }
+
+  .image_code img {
+      display: none;
+  }
+
+  .centerElement {
+    min-width: 760px;
+  }
+}
