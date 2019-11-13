@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>JavaScript Checkout Example</title>
+  <link rel="stylesheet" href="hw6.css" />
+</head>
+<body>
+  <div id="title">
+      <div id="greeting" class="message">MULTIPLICATION TABLE GENERATOR </div>
+  </div>
+  <div id="content">
+    <div id="greeting" class="message">Must use all 4! Must be INTEGERS!</div>
+      <form>
+      The x axis will range from:
+      <input type="text" id="x1">
+      to
+      <input type="text" id="x2">
+      <p id="invalid_x"></p>
+      <br>
+      The y axis will range from:
+      <input type="text" id="y1">
+      to
+      <input type="text" id="y2">
+      <p id="invalid_y"></p>
+      <br><br>
+      <a id="formButton" onclick="onClickMult('myTable')">MULTIPLY</a>
+      <a id="formButton" onclick="deleteTable()">CLEAR</a>
+      </form>
+      <div id="first" class="message"></div>
+      <div id="check" class="message"></div>
+
+      <table id="myTable">
+      </table>
+
+  </div>
+  <script src="hw6.js"></script>
+</body>
+</html>

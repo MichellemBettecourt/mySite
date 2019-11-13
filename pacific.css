@@ -1,0 +1,199 @@
+/*
+css code for the index of http://weblab.cs.uml.edu/~mbettenc/pacific.html
+
+The goal of this assignment is to style the pacific
+html using only an external .css file. If you shrink the screen
+size you will find that the html contents adjusts the same way
+as the images in the HW3_zip/HW3_read.
+
+I have included links to the helper cites I used.
+I also used alot of w3 schools help throughout.
+
+Copyright (c) 2019 by Michelle M. Bettencourt. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+Contact info: michelle_bettencourt@student.uml.edu
+updated by MMB on October 01, 2019
+*/
+
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+
+/*Important things about this section:
+In order to make the site appear like the images I had to make the overall
+background blue and change all the other colors. This way the nav bar looks
+like it alwasy reaches the bottom but if you inspect the page you will find
+that it is only up until the text*/
+body {
+	background-color: #4F6D93;
+  background-image: url(ptrbackground.jpg);
+  color: #4F6D93;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header {
+	box-shadow: 3px 3px 3px #333;
+}
+/*Important things about this section:
+In the images in the assingment I notices the nav bar remains the same with.
+I also got the color from there too*/
+nav {
+	background-color:#90c8e3;
+	font-weight: bold;
+  float: left;
+  height: inherit;
+  width: 175px;
+}
+/*Important things about this section:
+The list-style-image: none;
+padding-inline-start: 20px;
+Removing default styling and where the list starts was key */
+nav ul {
+	font-size: 1.2em;
+	list-style-image: none;
+	padding-inline-start: 20px;
+	width: 100%;
+	float: none;
+	list-style: none;
+}
+nav a:visited {
+	color: #344873;
+}
+nav a:hover {
+	color: #FFFFFF;
+}
+
+nav a {
+	color: #000034;
+}
+/*Important things about this section:
+The display block is what maintains it's continuity.  */
+h1 {
+	margin: 0;
+	padding: 10px;
+	display: block;
+  background-color: #000034;
+  color: white;
+}
+h2 {
+	color: #3399CC;
+	padding-left: 20px;
+}
+h1,
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+dt {
+	color: #000033;
+}
+
+/*Important things about this section:
+Since the nav bar remains a certain width I give the content that margin too
+Because I made the background of the body the same color as the nav bar I had to
+make this section white*/
+
+#content {
+	background-color: white;
+  float: right;
+	margin-left: 175px;
+	margin-top: -128px;
+	padding-right: 10px;
+}
+
+/*Important things about this section:
+I was struggling a bit with not having the bullet points go to the rights
+of the image. That was until I discovered list-style-position:inside;*/
+ul {
+	list-style-image: url(marker.gif);
+	list-style-position:inside;
+}
+
+/*Self-explanitory styling*/
+p {
+  margin-left: 20px;
+}
+
+/*Important things about this section:
+I did my best guess on the height and width of the img. However after that it
+remains the same in all screen widths*/
+img {
+	float: left;
+  position: relative;
+  width: 330px;
+  height: 256px;
+	padding: 0 20px 0 20px;
+}
+
+
+/*Important things about this section:
+The assingmeent details specify that the min width should be 600px
+After specifying the width by percentage the auto for margin was all that you
+needed to maintain that width
+The box-shadow: 3px 3px 3px #333; I learned from w3 schools */
+#wrapper {
+	height: auto;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 600px;
+  max-width: 1300px;
+  box-shadow: 3px 3px 3px #333;
+	overflow: auto;
+	background-color:#90c8e3;
+}
+
+/*Important things about this section:
+The "	width: -webkit-fill-available;"
+Without that I was going to have to specify the width for all the different
+screen sizes
+
+I made the conents within float left since that is how it is in all the views*/
+footer {
+	font-family: Georgia, "Times New Roman", serif;
+	position: relative;
+	float: left;
+	width: -webkit-fill-available;
+	background: white;
+	margin-left: 175px;
+	padding: 10px 10px 10px 20px;
+
+}
+/*Important things about this section:
+I did this with a combination of lecture, the resource and trial and error.
+
+Basically I hide the original text and import mine just before it.
+ However I also have to shrink the size of the text to not mess with the width
+ at the smallest min-width of the body*/
+
+/*Resource: https://css-tricks.com/swapping-out-text-five-different-ways/*/
+footer a {
+  letter-spacing: -4px;
+	visibility: hidden;
+}
+
+footer a:before {
+	width: 200px;
+	visibility: visible;
+	letter-spacing: normal;
+	content: 'michelle@bettencourt.com';
+}
+/*Self-explanitory styling*/
+#text {
+	background-color: white;
+}
+
+.resort {
+	color: #3a7db4;
+  font-weight: bold;
+}
+/*Important things about this section:
+This removes the underline*/
+a:-webkit-any-link {
+	text-decoration: none;
+}
+/*Self-explanitory styling*/
+#contact {
+	margin-left: 20px;
+}
