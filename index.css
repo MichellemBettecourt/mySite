@@ -15,6 +15,8 @@ html {
   background-size: cover;
 }
 
+/***************************** OVEERALL BODY STYLING **************************/
+
 /*
 Similar to alot of our other assinments I float a block of contents in the middle
 It is 80% with even margins on both sides.
@@ -29,6 +31,23 @@ It is 80% with even margins on both sides.
   margin-top: 20px;
   text-align: center;
 }
+
+/*
+Because of all the images the min-width is still pretty large at 992px
+The height is also a static number because I will be adding things to This
+manually
+*/
+
+.centerElement {
+  background-color:#f8d8d8;
+  border-radius: 10px;
+  padding: 10px 0;
+  min-height: 200px;
+  height: 650px;
+  min-width: 992px;
+}
+
+/********************************* HEADER STYLING *******************************/
 
 /*
 All of the images are pretty much the same just some need a specified width,
@@ -100,21 +119,6 @@ width
     font-family: "Times New Roman", Times, serif;
 }
 
-/*
-Because of all the images the min-width is still pretty large at 992px
-The height is also a static number because I will be adding things to This
-manually
-*/
-
-.centerElement {
-  background-color:#f8d8d8;
-  border-radius: 10px;
-  padding: 10px 0;
-  min-height: 200px;
-  height: 650px;
-  min-width: 992px;
-}
-
 
 h3 {
   margin: 0;
@@ -128,6 +132,70 @@ The title is the only part that is 100%. Also note the borders.
  border-top: solid 2px;
  border-bottom: solid 2px;
 }
+
+/********************************* RESUME STYLING *******************************/
+
+/*
+The mose important part about this section is the overflow-hidden.
+https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+*/
+
+.resume {
+  height: 410px;
+  overflow-x: hidden;
+  text-align: left;
+  border-left: inset;
+  border-color: dimgrey;
+  padding: 10px 0 0 20px;
+}
+
+/*
+This styles the scrollbar using help from w3 schools
+https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+This is causing a w3 warning but I  don't know how to fix it.
+*/
+div::-webkit-scrollbar {
+  width: 1em;
+}
+
+div::-webkit-scrollbar-thumb {
+background-color: darkgrey;
+outline: 1px solid slategrey;
+border-radius: 10px
+}
+
+/*
+Forces the header to be left
+*/
+
+.resumeH3 {
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+/*
+Removes underline
+*/
+
+.resumeEmail {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.resumeP {
+  text-align: center;
+}
+
+ul {
+   list-style-type: square;
+   margin-top: 0;
+}
+
+/********************************* NAV STYLING *******************************/
 
 /*
 The nav has a set width.
@@ -170,68 +238,20 @@ a:hover {
   color: green;
 }
 
-/*
-The mose important part about this section is the overflow-hidden.
-https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
-*/
 
-.resume {
-  height: 410px;
-  overflow-x: hidden;
-  text-align: left;
-  border-left: inset;
-  border-color: dimgrey;
-  padding: 10px 0 0 20px;
-}
-
-/*
-This styles the scrollbar using help from w3 schools
-https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
-*/
-div::-webkit-scrollbar {
-  width: 1em;
-}
-
-div::-webkit-scrollbar-thumb {
-background-color: darkgrey;
-outline: 1px solid slategrey;
-border-radius: 10px
-}
-
-.resumeH3 {
-  float: left;
-  width: 100%;
-  text-align: left;
-}
-
-.resumeEmail {
-  text-decoration: none;
-}
-
-p {
-  margin: 0;
-}
-
-.resumeP {
-  text-align: center;
-}
-
-ul {
-   list-style-type: square;
-   margin-top: 0;
-}
+/****************************** DROPDOWN STYLING *****************************/
 
 /* https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_navbar_dropdown */
 /* Basically the way is works is that the "dropdown conent" remains hidden until
 it is hovered over. In that case it appears to the user on top of everything
 because of the z index */
-.dropdown1, .dropdown2, .dropdown3, .dropdown4, .dropdown5 {
+.dropdown1, .dropdown2, .dropdown3, .dropdown4, .dropdown5, .dropdown6 {
   position: relative;
   display: inline-block;
     margin: 10px 0;
 }
 
-.dropdown-content1, .dropdown-content2, .dropdown-content3, .dropdown-content4, .dropdown-content5{
+.dropdown-content1, .dropdown-content2, .dropdown-content3, .dropdown-content4, .dropdown-content5, .dropdown-content6, .dropdown-content7 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -268,11 +288,25 @@ dropdown-content
   display: block;
 }
 
+.dropdown6:hover .dropdown-content6 {
+  display: block;
+}
+
+.dropdown7:hover .dropdown-content7 {
+  display: block;
+}
+
 .courseWork {
   padding: 10px 0;
   border-bottom: double;
 }
 
+
+
+/*
+In my opinion this is kind of self-explanitory
+It is just styling of two sections
+ */
 .aboutMe {
   border-bottom: inset;
   overflow-x: hidden;
@@ -299,6 +333,9 @@ and gets a little larger when it's hovered over
 .link:hover {
   font-size: large;
 }
+
+/****************************** RESIZING STYLING *****************************/
+
 /*
 This is redesigning some things when the size is ipad length or smaller
 -It removes some images in the title so that I can shorten the width
