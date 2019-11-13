@@ -251,7 +251,8 @@ because of the z index */
     margin: 10px 0;
 }
 
-.dropdown-content1, .dropdown-content2, .dropdown-content3, .dropdown-content4, .dropdown-content5, .dropdown-content6, .dropdown-content7 {
+.dropdown-content1, .dropdown-content2, .dropdown-content3, .dropdown-content4,
+.dropdown-content5, .dropdown-content6, .dropdown-content7, .dropdown-content8 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -293,6 +294,10 @@ dropdown-content
 }
 
 .dropdown7:hover .dropdown-content7 {
+  display: block;
+}
+
+.dropdown8:hover .dropdown-content8 {
   display: block;
 }
 
