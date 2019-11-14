@@ -4,33 +4,63 @@
   <link rel="stylesheet" href="hw6.css" />
 </head>
 <body>
+  <!--
+  This is the title dicv and it sits just above the main div
+  -->
   <div id="title">
       <div id="greeting" class="message">MULTIPLICATION TABLE GENERATOR </div>
   </div>
+  <!--
+  This is the main div with the double boarder. It is always 80% width
+  -->
   <div id="content">
+    <!--
+    Some small directions to let the user know what to do.
+    -->
     <div id="greeting" class="message">Must use all 4! Must be INTEGERS!</div>
       <form>
+        <!--
+        The form has 4 inputs with some direction to help
+        -->
       The x axis will range from:
       <input type="text" id="x1">
       to
       <input type="text" id="x2">
+      <!--
+      This is where the invalid input error message appears if they have it
+      -->
       <p id="invalid_x"></p>
       <br>
       The y axis will range from:
       <input type="text" id="y1">
       to
       <input type="text" id="y2">
+      <!--
+      This is where the invalid input error message appears if they have it
+      -->
       <p id="invalid_y"></p>
       <br><br>
+      <!--
+      The two button under the input form
+      The multiply button goes to the onClickMult button where it is
+      either checked for error or generated a table
+      The clear button goes to the delete function
+      -->
       <a id="formButton" onclick="onClickMult('myTable')">MULTIPLY</a>
-      <a id="formButton" onclick="deleteTable()">CLEAR</a>
+      <a id="formButton" onclick="deleteTable(true)">CLEAR</a>
       </form>
+      <!--
+      First we give some small direction
+      Then the second div displays a __ X __ = ___ text depending on where you hover
+      -->
       <div id="first" class="message"></div>
       <div id="check" class="message"></div>
-
-      <table id="myTable">
-      </table>
-
+      <!--
+      This is where the generated table will live.
+      -->
+      <div id="myTableContainer">
+        <table id="myTable"></table>
+      </div>
   </div>
   <script src="hw6.js"></script>
 </body>

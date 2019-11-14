@@ -1,6 +1,10 @@
 html {
     height: 100%;}
 
+/*
+I chose the background an image I found
+I then add in some font types and margins
+*/
 body {
     background-color: #b6a996;
     border: 5px double #31373f;
@@ -16,7 +20,12 @@ body {
     background-image: url("hw6_bg.jpg");
     min-height: 90%;
   }
-
+  /*
+  Important things to note:
+  -The width of the center box is always 80%
+  -I have some slight padding
+  -color and a double border around them
+  */
 #content {
     background-color: #fff;
     border: 3px double #31373f;
@@ -29,7 +38,12 @@ body {
     overflow: auto;
     text-align: center;
   }
-
+  /*
+  Important things to note:
+  - The monospace font
+  - The width is also 80%
+  - The font is larger
+  */
 #title {
   font-family: monospace;
   font-size: 24px;
@@ -41,7 +55,11 @@ body {
   overflow: auto;
   text-align: center;
 }
-
+/*
+Important things to note:
+- Some small Styling
+- I made some width contraints
+*/
 h1, h2 {
     text-indent: 100%;
     white-space: nowrap;
@@ -59,41 +77,10 @@ h2 {
     height: 18px;
     margin: 0 auto 20px auto;
 }
-
-#cost, .action {
-    background-color: #f84c53;
-    color: #fff;
-    width: auto;
-    height: 2em;
-    padding: 0.5em 0.75em;
-    border: none;
-}
-#cost {
-    position: relative;
-    top: 1em;
-    right: 2em;}
-
-
-#note {
-    background-color: #31373f;
-    border-radius: 0.5em;
-    color: #e3bb5a;
-    padding: 0.5em 1em;
-    margin-top: 1em;
-    text-transform: uppercase;
-    display: inline-block;}
-
-a {
-    color: #e3bb5a;
-    text-decoration:none;}
-
-.true, .false {
-    display: block;
-    float:right;
-    height: 25px;
-    width: 25px;}
-.false {
-    background-position: 0 -25px;}
+/*
+Important things to note:
+- styling for the directions portion
+*/
 
 .message {
     font-weight: bold;
@@ -108,27 +95,54 @@ a {
 
 .number {
     text-align: left;}
-
+/*
+Important things to note:
+- The table is pretty basic
+*/
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  /* margin: 22px; */
+  border: 1px black;
+  margin-left: 42px;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+#myTableContainer {
+  overflow: auto;
+}
+
+/*
+Important things to note:
+- Each cell is slightly padded
+*/
+
+td, tr, th {
+  border: 1px solid #ddd;
   text-align: left;
-  padding: 8px;
+  padding: 2px;
+  border-color: black;
+}
+
+/*
+Important things to note:
+- On hover the row is hightlighted
+- On hover the cell is red
+*/
+
+td {
+  margin-left: 12px;
 }
 
 tr:first-child {
   background-color: #dddddd;
 }
 
+
 td:first-child {
   background-color: #dddddd;
-  width: 20px;
+  width: 35px;
+  position: absolute;
+  margin-left: -43px;
 }
 
 tr:hover {
@@ -141,13 +155,26 @@ tr:first-child::hover {
 
 td:hover {background:red;}
 
+tr:first-child td:first-child{
+    border-top-width: 2px;
+  }
+
+/*
+Important things to note:
+- removed padding and margins from the p elements
+*/
 
 #formButton {
   background: red;
     padding: 5px;
     color: white;
+    text-decoration:none;
 }
 
+/*
+Important things to note:
+- removed padding and margins from the p elements
+*/
 #invalid_x {
   padding: 0;
   color: red;
@@ -159,21 +186,3 @@ td:hover {background:red;}
   color: red;
   margin: 0;
 }
-
-/* body:before, body:after {
-    content: "";
-    position: fixed;
-    background: #fff;
-    left: 0;
-    right: 0;
-    height: 20px;}
-
-body:before {
-    top: 0;}
-
-body:after {
-    bottom: 0;}
-
-body {
-    border-left: 20px solid #fff;
-    border-right: 20px solid #fff;} */
