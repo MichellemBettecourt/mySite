@@ -1,4 +1,4 @@
-//
+// 
 // Homework 6: Multiplication table generator using Embedding javascript
 // File: https://michellembettecourt.github.io/mySite/GUI_HW6/hw6.html
 // Name: Michelle Bettencourt
@@ -14,7 +14,7 @@
 // author.
 //
 // Updated by MMB on November 12, 2019
-//
+
 
 //***************************************************************
 // This function is pretty self explanitory

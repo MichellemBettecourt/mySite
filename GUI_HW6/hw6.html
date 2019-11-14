@@ -1,14 +1,33 @@
-<html>
+<!-- 
+Homework 6: Multiplication table generator using Embedding javascript
+File: https://michellembettecourt.github.io/mySite/GUI_HW6/hw6.html
+Name: Michelle Bettencourt
+E-mail: michelle_bettencourt@student.uml.edu
+University affiliation: UMass Lowell student in GUI COMP.4610
+Date: November 12, 2019
+Description: We were asked to make a multiplication table generator
+using javascript, HTML and css. The user is asked to input 4 integers
+(negative or positive). The program also accounts for invalid inputs
+
+Copyright (c) 2019 by Michelle M. Bettencourt. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+
+Updated by MMB on November 12, 2019 -->
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>JavaScript Checkout Example</title>
+  <title>Multiplication Table</title>
   <link rel="stylesheet" href="hw6.css" />
+  <meta charset="utf-8">
 </head>
 <body>
   <!--
   This is the title dicv and it sits just above the main div
   -->
   <div id="title">
-      <div id="greeting" class="message">MULTIPLICATION TABLE GENERATOR </div>
+      <div id="greeting1" class="message">MULTIPLICATION TABLE GENERATOR </div>
   </div>
   <!--
   This is the main div with the double boarder. It is always 80% width
@@ -17,7 +36,7 @@
     <!--
     Some small directions to let the user know what to do.
     -->
-    <div id="greeting" class="message">Must use all 4! Must be INTEGERS!</div>
+    <div id="greeting2" class="message">Must use all 4! Must be INTEGERS!</div>
       <form>
         <!--
         The form has 4 inputs with some direction to help
@@ -46,8 +65,8 @@
       either checked for error or generated a table
       The clear button goes to the delete function
       -->
-      <a id="formButton" onclick="onClickMult('myTable')">MULTIPLY</a>
-      <a id="formButton" onclick="deleteTable(true)">CLEAR</a>
+      <a id="formButton1" onclick="onClickMult('myTable')">MULTIPLY</a>
+      <a id="formButton2" onclick="deleteTable(true)">CLEAR</a>
       </form>
       <!--
       First we give some small direction
