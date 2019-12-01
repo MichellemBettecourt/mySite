@@ -1,0 +1,229 @@
+
+<!--
+Homework 7: Multiplication table generator using Embedding javascript AND JQUERY
+File: https://michellembettecourt.github.io/mySite/GUI_HW6/hw6.html
+Name: Michelle Bettencourt
+E-mail: michelle_bettencourt@student.uml.edu
+University affiliation: UMass Lowell student in GUI COMP.4610
+Date: November 12, 2019
+Description: We were asked to make a multiplication table generator
+using javascript, HTML and css. The user is asked to input 4 integers
+(negative or positive). The program also accounts for invalid inputs
+Copyright (c) 2019 by Michelle M. Bettencourt. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+Updated by MMB on December 01, 2019 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Multiplication Table</title>
+  <link rel="stylesheet" href="hw7.css" />
+  <meta charset="utf-8">
+</head>
+<body>
+  <!--
+  This is the title dicv and it sits just above the main div
+  -->
+  <div id="title">
+      <div id="greeting1" class="message">MULTIPLICATION TABLE GENERATOR </div>
+  </div>
+  <!--
+  This is the main div with the double boarder. It is always 80% width
+  -->
+  <div id="content">
+    <!--
+    Some small directions to let the user know what to do.
+    -->
+    <div id="greeting2" class="message">Must use all 4! Must be INTEGERS!</div>
+
+
+      <form id="input_form" method="post" action="">
+        <!--
+        Each element is the same
+        the ID is important because later we use it to check
+        -The label is self explanitory
+        -The input is used in the jquery functions
+        -The div is one kind of erro
+        - and the p is another kind of error
+        - The errors will appear below the label and input
+        -->
+          <!-- x axis -->
+        <div>
+          <label for="input_form_x_axis_1">The x axis will range from:</label>
+          <input id="input_form_x_axis_1" name="x_axis_1"></input>
+          <div class="error">This field is required and/or invalid.</div>
+          <p class="error2">Integers only please!!</p>
+        </div>
+        <!--
+        -The label is self explanitory
+        -The input is used in the jquery functions
+        -The div is one kind of erro
+        - and the p is another kind of error
+        - The errors will appear below the label and input
+        -->
+        <div>
+          <label for="input_form_x_axis_2">to:</label>
+          <input id="input_form_x_axis_2" name="x_axis_2"></input>
+          <div class="error">This field is required and/or invalid.</div>
+          <p class="error2">Integers only please!!</p>
+        </div>
+        <!-- y axis -->
+        <!--
+        -The label is self explanitory
+        -The input is used in the jquery functions
+        -The div is one kind of erro
+        - and the p is another kind of error
+        - The errors will appear below the label and input
+        -->
+        <div>
+          <label for="input_form_y_axis_1">The y axis will range from:</label>
+          <input  id="input_form_y_axis_1" name="y_axis_1"></input>
+          <div class="error">This field is required and/or invalid.</div>
+          <p class="error2">Integers only please!!</p>
+        </div>
+        <!--
+        -The label is self explanitory
+        -The input is used in the jquery functions
+        -The div is one kind of erro
+        - and the p is another kind of error
+        - The errors will appear below the label and input
+        -->
+        <div>
+          <label for="input_form_y_axis_2">to:</label>
+          <input id="input_form_y_axis_2" name="y_axis_2"></input>
+          <div class="error">This field is required and/or invalid.</div>
+          <p class="error2">Integers only please!!</p>
+        </div>
+        <!-- Submit Button -->
+        <!--
+        The two button under the input form
+        The multiply button goes to the onClickMult button where it is
+        either checked for error or generated a table
+        The clear button goes to the delete function
+        -->
+        <div id="input_form_buttons">
+          <div id="input_form_submit">
+            <button type="submit" id="formButton1">MULTIPLY</button>
+          </div>
+          <div id="input_form_clear">
+            <button id="formButton1" onclick="onClickMult('myTable')">CLEAR</button>
+          </div>
+        </div>
+      </form>
+      <!--
+      First we give some small direction
+      Then the second div displays a __ X __ = ___ text depending on where you hover
+      -->
+      <div id="first" class="message"></div>
+      <div id="check" class="message"></div>
+      <div id="tooBigMessageX" class="message"></div>
+      <div id="tooBigMessageY" class="message"></div>
+      <div id="tooBigMessage" class="message"></div>
+      <!--
+      This is where the generated table will live.
+      -->
+      <div id="myTableContainer">
+        <table id="myTable"></table>
+      </div>
+  </div>
+  <script src="hw7.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- JavaScript Code -->
+  <script>
+    // https://formden.com/blog/validate-contact-form-jquery
+    //These next 4 functions are for each input value
+    $(document).ready(function() {
+      <!-- Real-time Validation -->
+        <!--input must be an integer -->
+        $('#input_form_x_axis_1').on('input', function() {
+          //takes in the input and gets the error2 to element
+          var input=$(this);
+          var error_element=$("p", input.parent());
+          //if the "floor" doesnt match the actual input than it's wrong
+          var is_number=Number.isInteger(input.val());
+          var is_number = (Math.floor(input.val()) == input.val() && $.isNumeric(input.val()));
+          //if its wrong give it a red margin and show the p element
+          if(is_number){
+            input.removeClass("invalid").addClass("valid");
+            error_element.removeClass("error_show").addClass("error2");
+          } else {
+            input.removeClass("valid").addClass("invalid");
+            error_element.removeClass("error2").addClass("error_show");
+          }
+        });
+
+        $('#input_form_x_axis_2').on('input', function() {
+          //takes in the input and gets the error2 to element
+          var input=$(this);
+          var error_element=$("p", input.parent());
+          //if the "floor" doesnt match the actual input than it's wrong
+          var is_number=Number.isInteger(input.val());
+          var is_number = (Math.floor(input.val()) == input.val() && $.isNumeric(input.val()));
+          //if its wrong give it a red margin and show the p element
+          if(is_number){
+            input.removeClass("invalid").addClass("valid");
+            error_element.removeClass("error_show").addClass("error2");
+          } else {
+            input.removeClass("valid").addClass("invalid");
+            error_element.removeClass("error2").addClass("error_show");
+          }
+        });
+
+        $('#input_form_y_axis_2').on('input', function() {
+          //takes in the input and gets the error2 to element
+          var input=$(this);
+          var error_element=$("p", input.parent());
+          //if the "floor" doesnt match the actual input than it's wrong
+          var is_number=Number.isInteger(input.val());
+          var is_number = (Math.floor(input.val()) == input.val() && $.isNumeric(input.val()));
+          //if its wrong give it a red margin and show the p element
+          if(is_number){
+            input.removeClass("invalid").addClass("valid");
+            error_element.removeClass("error_show").addClass("error2");
+          } else {
+            input.removeClass("valid").addClass("invalid");
+            error_element.removeClass("error2").addClass("error_show");
+          }
+        });
+
+        $('#input_form_y_axis_1').on('input', function() {
+          //takes in the input and gets the error2 to element
+          var input=$(this);
+          var error_element=$("p", input.parent());
+          //if the "floor" doesnt match the actual input than it's wrong
+          var is_number=Number.isInteger(input.val());
+          var is_number = (Math.floor(input.val()) == input.val() && $.isNumeric(input.val()));
+          //if its wrong give it a red margin and show the p element
+          if(is_number){
+            input.removeClass("invalid").addClass("valid");
+            error_element.removeClass("error_show").addClass("error2");
+          } else {
+            input.removeClass("valid").addClass("invalid");
+            error_element.removeClass("error2").addClass("error_show");
+          }
+        });
+
+      <!-- After Form Submitted Validation-->
+      $("#input_form_submit button").click(function(event){
+        var form_data=$("#input_form").serializeArray();
+        var error_free=true;
+        //When the user clicks multiply we check every element
+        //if its wrong from earlier OR empty, tell the user using the DIV element
+        for (var input in form_data){
+          var element=$("#input_form_"+form_data[input]['name']);
+          var valid=element.hasClass("valid");
+          var error_element=$("div", element.parent());
+          if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+          else{error_element.removeClass("error_show").addClass("error");}
+        }
+        //do not remove input values because I am using them later in the functions
+          event.preventDefault();
+        //if there is no errors, fire off the function
+          if (error_free) onClickMult('myTable');
+
+      });
+    });
+  </script>
+</body>
+</html>

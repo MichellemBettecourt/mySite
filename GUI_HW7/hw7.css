@@ -1,0 +1,250 @@
+/*
+Homework 7: Multiplication table generator using Embedding javascript AND JQUERY
+File: https://michellembettecourt.github.io/mySite/GUI_HW6/hw6.html
+Name: Michelle Bettencourt
+E-mail: michelle_bettencourt@student.uml.edu
+University affiliation: UMass Lowell student in GUI COMP.4610
+Date: November 12, 2019
+Description: We were asked to make a multiplication table generator
+using javascript, HTML and css. The user is asked to input 4 integers
+(negative or positive). The program also accounts for invalid inputs
+Copyright (c) 2019 by Michelle M. Bettencourt. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+Updated by MMB on December 01, 2019
+*/
+
+html {
+    height: 100%;}
+
+/*
+I chose the background an image I found
+I then add in some font types and margins
+*/
+body {
+    background-color: #b6a996;
+    border: 5px double #31373f;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 100%;
+    margin: 5px;
+    padding: 0;
+    text-align: center;
+    background-image: url("hw7_bg.jpg");
+    min-height: 90%;
+    min-width: 410px;
+  }
+  /*
+  Important things to note:
+  -The width of the center box is always 80%
+  -I have some slight padding
+  -color and a double border around them
+  */
+#content {
+    background-color: #fff;
+    border: 3px double #31373f;
+    color: #31373f;
+    display: inline-block;
+    padding: 30px 0;
+    margin: 0 auto 50px auto;
+    width: 90%;
+    min-height: 4em;
+    overflow: auto;
+    text-align: center;
+    min-width: 380px;
+  }
+  /*
+  Important things to note:
+  - The monospace font
+  - The width is also 80%
+  - The font is larger
+  */
+#title {
+  font-family: monospace;
+  font-size: 24px;
+  font-style: normal;
+  display: inline-block;
+  margin: 67px auto 0 auto;
+  width: 80%;
+  min-height: 3em;
+  overflow: auto;
+  text-align: center;
+}
+/*
+Important things to note:
+- Some small Styling
+- I made some width contraints
+*/
+h1, h2 {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;}
+
+h1 {
+    width: 278px;
+    height: 112px;
+    margin: 0 auto 0 auto;
+    padding-top: 40px;
+  }
+
+h2 {
+    width: 286px;
+    height: 18px;
+    margin: 0 auto 20px auto;
+}
+/*
+Important things to note:
+- styling for the directions portion
+*/
+
+.message {
+    font-weight: bold;
+    line-height: 1.5em;
+    height: auto;
+    display: block;
+    clear: left;
+    min-width: 10em;}
+
+.message span {
+    font-weight: normal;}
+
+.number {
+    text-align: left;}
+/*
+Important things to note:
+- The table is pretty basic
+*/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px black;
+  margin-left: 42px;
+}
+
+#myTableContainer {
+  overflow: auto;
+}
+
+/*
+Important things to note:
+- Each cell is slightly padded
+*/
+
+td, tr, th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 2px;
+  border-color: black;
+}
+
+/*
+Important things to note:
+- On hover the row is hightlighted
+- On hover the cell is red
+*/
+
+td {
+  margin-left: 12px;
+}
+
+tr:first-child {
+  background-color: #dddddd;
+}
+
+
+td:first-child {
+  background-color: #dddddd;
+  width: 35px;
+  position: absolute;
+  margin-left: -43px;
+}
+
+tr:hover {
+  background-color: #ffa;
+}
+
+tr:first-child::hover {
+  background-color: #dddddd;
+}
+
+td:hover {background:red;}
+
+tr:first-child td:first-child{
+    border-top-width: 2px;
+  }
+
+/*
+Important things to note:
+- removed padding and margins from the p elements
+*/
+
+#formButton1, #formButton2 {
+  background: red;
+    padding: 5px;
+    color: white;
+    text-decoration:none;
+        border: none;
+}
+
+/*
+Important things to note:
+- removed padding and margins from the p elements
+*/
+#invalid_x {
+  padding: 0;
+  color: red;
+  margin: 0;
+}
+
+#invalid_y {
+  padding: 0;
+  color: red;
+  margin: 0;
+}
+
+#input_form label{
+  display: inline-block;
+  width: 205px;
+  text-align: right;
+}
+#contact_submit{
+  padding-left: 100px;
+}
+#input_form div{
+  margin-top: .2em;
+}
+textarea{
+  vertical-align: top;
+  height: 5em;
+}
+/* Hides the error elements at first but then adds it dynamically */
+.error, .error2{
+  display: none;
+  margin-left: 10px;
+}
+
+ /* Makes the font of the erros red and smaller  */
+.error_show{
+  color: red;
+  font-size: small;
+  margin-left: 10px;
+}
+
+/* This is when the input is invalid, gives it a red thick border */
+input.invalid, textarea.invalid{
+  border: 2px solid red;
+}
+/* This is when the input is invalid, gives it a GREEN thick border */
+input.valid, textarea.valid{
+  border: 2px solid green;
+}
+
+/*Removes the margins from the p tag and makes the font slightly smaller*/
+p {
+  margin: 0;
+  font-size: small;
+}
