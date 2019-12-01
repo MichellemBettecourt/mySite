@@ -245,14 +245,14 @@ a:hover {
 /* Basically the way is works is that the "dropdown conent" remains hidden until
 it is hovered over. In that case it appears to the user on top of everything
 because of the z index */
-.dropdown1, .dropdown2, .dropdown3, .dropdown4, .dropdown5, .dropdown6, .dropdown7, .dropdown8 {
+.dropdown1, .dropdown2, .dropdown3, .dropdown4, .dropdown5, .dropdown6, .dropdown7, .dropdown8, .dropdown9 {
   position: relative;
   display: inline-block;
     margin: 10px 0;
 }
 
 .dropdown-content1, .dropdown-content2, .dropdown-content3, .dropdown-content4,
-.dropdown-content5, .dropdown-content6, .dropdown-content7, .dropdown-content8 {
+.dropdown-content5, .dropdown-content6, .dropdown-content7, .dropdown-content8, .dropdown-content9 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -298,6 +298,10 @@ dropdown-content
 }
 
 .dropdown8:hover .dropdown-content8 {
+  display: block;
+}
+
+.dropdown9:hover .dropdown-content9 {
   display: block;
 }
 
