@@ -18,5 +18,3 @@ How to use it:
 
 The tab section allows you to see your previous generated tables
 It will also allow you to delete one by one with the x or multiple with the checkboxes
-
-- Finally the clear, clears everything.
