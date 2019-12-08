@@ -122,7 +122,7 @@ function onClickMult(tableID) {
         tableID_button2 = tableID + "_button";
         var txt4 = "<div class=\"tabcontent\" id=\"" + tableID_div  + "\" ><table id=\"" + tableID + "\"></table></div>"
         var button = "<button id=\"" + tableID_button  + "\" onclick=\"openCity(event,'" + tableID_div + "')\" class='tablinks'> Table " + tabCount +  "<" + "/button>"
-        + "<button style=\"padding: 4px 0px 14px 0; margin-left: -27px; background-color: transparent;\" class=\"close-button\"onclick=\"closeButtons('" + tableID_button2 + "','" + tableID_div + "')\" ><span class=\"close\">&times;</span><" + "/button>"
+        + "<button style=\"padding: 4px 0px 14px 0; margin-left: -27px; background-color: transparent;\" class=\"close-button\"><span onclick=\"closeButtons('" + tableID_button2 + "','" + tableID_div + "')\"class=\"close\">&times;</span><" + "/button>"
         + "<input  id=\"" + tableID  + "_checkbox\" style=\"margin-top: 28px;margin-left: -17px; float: left;\" type=\"checkbox\">";
         $('#table_id_1_button').attr('onClick', 'openCity(event,"table_id_1_div")');
         var txt1 = "<div id='" + tableID + "_div'" +  " class='tabcontent'><table id='" + tableID + "'></table></div>"
