@@ -1,0 +1,146 @@
+/*
+Homework 9: Generate scrabble board game
+File: https://michellembettecourt.github.io/mySite/GUI_HW9/hw9.html
+Name: Michelle Bettencourt
+E-mail: michelle_bettencourt@student.uml.edu
+University affiliation: UMass Lowell student in GUI COMP.4610
+Date: November 12, 2019
+Description: We were asked to make a multiplication table generator
+using javascript, HTML and css. The user is asked to input 4 integers
+(negative or positive). The program also accounts for invalid inputs
+Copyright (c) 2019 by Michelle M. Bettencourt. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+Updated by MMB on December 12, 2019
+*/
+
+html {
+    height: 100%;
+}
+
+/* Just some styling to keep body centered  */
+body {
+    background-color: #b6a996;
+    border: 5px double #31373f;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 100%;
+    margin: 5px auto;
+    padding: 0;
+    text-align: center;
+    min-height: 90%;
+    width: 1000px;
+  }
+/* This is where the screbble board lives
+Note the height and width are hard numbers
+*/
+#content {
+    background-color: #fff;
+    border: 3px double #31373f;
+    color: #31373f;
+    display: inline-block;
+    margin: 20px auto 16px auto;
+    overflow: auto;
+    text-align: center;
+    background-image: url(scrabbleboard.jpg);
+    background-repeat: no-repeat;
+    height: 601px;
+    width: 601px;
+  }
+  /* Self explanitory */
+.tile {
+  width: 35px;
+  height: 36px;
+}
+
+/* This is the grid that lays ontop of scrabble board
+The width is 15 tile spots wide and it's transparent
+ */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+  background-color: transparent;
+}
+
+/* Each grid item has a set width and height to
+accomidate board img and has a slight border  */
+.grid-item {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  text-align: center;
+  height: 38px;
+  max-width: 40px;
+  max-height: 40px;
+
+}
+
+
+.grid-item::hover {
+    background: rgb(255, 255, 255) transparent;
+}
+/* This is the holder div, note the back ground img.
+The height and width are to fit the image perfectly  */
+.lists {
+    height: 81px;
+    width: 267px;
+    padding-top: 13px;
+    background-image: url("holder3.png");
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+div:hover {
+  background-color:  rgb(255, 255, 255) transparent;;
+}
+
+#demo {
+  background: #ef8b8b;
+  border: 8px double black;
+  margin: 10px auto;
+  min-width: 353px;
+  min-height: 100px;
+}
+/* These are the divs on the far left where the holder is and the score card */
+#parent_div_1, #parent_div_2, #parent_div_3{
+    width:370px;
+    height:100px;
+    margin-right:10px;
+    float:left;
+    margin-top: 85px;
+}
+
+.locked {
+  position: absolute !important;
+}
+
+button {
+  background: #ef8b8b;
+  height: 35px;
+}
+
+#noWordError, #getMoreTiles {
+  color: #c32259;
+}
+/*Some styling */
+h3 {
+font-family: fantasy;
+font-size: x-large;
+}
+
+/* Directions list */
+li {
+      text-align-last: start;
+}
+
+ol {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 10px;
+    padding-left: 43px;
+}
