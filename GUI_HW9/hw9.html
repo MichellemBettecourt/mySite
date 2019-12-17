@@ -1,0 +1,67 @@
+
+<!--
+Homework 8: Multiplication table generator using Embedding javascript AND JQUERY
+now with sliders and tabs
+File: https://michellembettecourt.github.io/mySite/GUI_HW8/hw8.html
+Name: Michelle Bettencourt
+E-mail: michelle_bettencourt@student.uml.edu
+University affiliation: UMass Lowell student in GUI COMP.4610
+Date: November 12, 2019
+Description: We were asked to make a multiplication table generator
+using javascript, HTML and css. The user is asked to input 4 integers
+(negative or positive). The program also accounts for invalid inputs
+Copyright (c) 2019 by Michelle M. Bettencourt. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+Updated by MMB on December 12, 2019 -->
+
+<!DOCTYPE html>
+<html lang="en" manifest="manifest.json">
+<head>
+  <title>Multiplication Table</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="hw9.css"/>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="starting">
+    <!-- The Scrabble board -->
+    <div id="content">
+        <!-- The grid that lays on top  -->
+      <div id="grid-container" class="grid-container">
+      </div>
+    </div>
+    <!-- The far left panel  -->
+    <div id='parent_div_1'>
+          <!-- Directions  -->
+      <h3> Play Scrabble </h3>
+      <ol>
+        <li> Move the tiles from the holder to the board </li>
+        <li> Make a word </li>
+        <li> Submit word </li>
+        <li> Get more tiles </li>
+      </ol>
+      <!-- Score card  -->
+      <div id="demo">
+        <p id="totalScore"> </p>
+        <p id="wordScore"> </p>
+      </div>
+      <!-- Scrabble holder  -->
+      <div id="list1" class="lists"></div>
+      <!-- Button's under the scrabble holder  -->
+      <button type="button" onclick="submitWord()">Submit Word</button>
+      <button type="button" onclick="moreLetters()">More Letters</button>
+      <!-- Error messages  -->
+      <p id="noWordError"> </p>
+      <p id="getMoreTiles"> </p>
+      <!-- Bag count -->
+      <p id="bag"> </p>
+      <!-- New game button -->
+      <button type="button" onclick="newGame()">New Game</button>
+    </div
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="hw9.js"></script>
+</body>
+</html>
